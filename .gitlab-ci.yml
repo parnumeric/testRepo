@@ -14,6 +14,7 @@ build1:
   stage: build
   script:
     - echo "Do your build here"
+    - echo "adding another line"
 
 test1:
   stage: test
