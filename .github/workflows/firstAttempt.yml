@@ -41,8 +41,8 @@ jobs:
         # uses: actions/upload-artifact@v2
         # with:
         #   outFile:
-        run: |
-          #cd testRepo/src
+        run: >
+          cd testRepo/src
           ls
           make
           ./helloWorld.exe
