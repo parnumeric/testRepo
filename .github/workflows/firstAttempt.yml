@@ -42,7 +42,7 @@ jobs:
         # with:
         #   outFile:
         run: >
-          cd testRepo/src
-          ls
-          make
-          ./helloWorld.exe
+          cd testRepo/src;
+          ls;
+          make;
+          ./helloWorld.exe;
