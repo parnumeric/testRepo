@@ -43,5 +43,6 @@ jobs:
         #   outFile:
         run: |
           #cd testRepo/src
+          ls
           make
           ./helloWorld.exe
