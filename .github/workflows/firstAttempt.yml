@@ -51,24 +51,25 @@ jobs:
       - uses: actions/checkout@v3
 
       - name: Download artifacts from build stage...
+
+        # putting "uses" clause in a step means we cannot have our
+        # own bash script here!
         uses: actions/download-artifact@v3
 
         # comment out the next two lines to just download
         # all artifacts
         with:
           name: mainExecutable
-        run: |
-          pwd
-          ls
-          mv helloWorld.exe src
 
 
       - name: Run the executable from before
         run: |
           whoami
-          hostname
           pwd
-          cd src
           echo "helloWorld.exe should already be present..."
+          ls
+          echo "move the executable from top-level down to src"
+          mv helloWorld.exe src
+          cd src
           ls
           ./helloWorld.exe
