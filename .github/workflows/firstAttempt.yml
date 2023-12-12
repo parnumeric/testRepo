@@ -57,6 +57,10 @@ jobs:
         # all artifacts
         with:
           name: mainExecutable
+        run: |
+          pwd
+          ls
+          mv helloWorld.exe src
 
 
       - name: Run the executable from before
