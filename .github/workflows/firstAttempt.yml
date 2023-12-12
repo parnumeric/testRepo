@@ -42,7 +42,8 @@ jobs:
         # with:
         #   outFile:
         run: >
-          cd testRepo/src;
+          pwd;
+          cd src;
           ls;
           make;
           ./helloWorld.exe;
