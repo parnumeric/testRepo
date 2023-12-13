@@ -41,7 +41,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
         #   name: mainExecutable
-          path: *
+          path: ./*
           retention-days: 1
 
   test_job:
