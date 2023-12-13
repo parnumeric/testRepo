@@ -24,7 +24,8 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v3
+      - name: Checkout Repo
+        uses: actions/checkout@v3
 
       # Runs a set of commands using the runners shell
       - name: Making the executable to run
@@ -38,9 +39,9 @@ jobs:
           ./helloWorld.exe
 
       - name: Uploading the executable for later...
-        uses: actions/cache@v3
-        key: *
+        uses: actions/upload-artifact@v3
         with:
+          name: build_artifacts
           path: ./*
 
   test_job:
@@ -52,17 +53,17 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      # - name: Download artifacts from build stage...
+      - name: Download artifacts from build stage...
 
-      #   # putting "uses" clause in a step means we cannot have our
-      #   # own bash script here!
-      #   uses: actions/download-artifact@v3
+        # putting "uses" clause in a step means we cannot have our
+        # own bash script here!
+        uses: actions/download-artifact@v3
 
         # comment out the next two lines to just download
         # all artifacts
-        # with:
-        #   name: mainExecutable
-        #   path: src/helloWorld.exe
+        with:
+          name: build_artifacts
+          # path: src/helloWorld.exe
 
 
       - name: Run the executable from before
