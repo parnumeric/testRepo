@@ -39,6 +39,7 @@ jobs:
 
       - name: Uploading the executable for later...
         uses: actions/cache@v3
+        key: *
         with:
           path: ./*
 
