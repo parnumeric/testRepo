@@ -67,6 +67,7 @@ jobs:
       - name: Run the executable from before
         run: |
           whoami
+          ls
           pwd
           cd src
           echo "helloWorld.exe should already be present..."
