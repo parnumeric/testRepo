@@ -77,5 +77,8 @@ jobs:
           pwd
           cd src
           echo "helloWorld.exe should already be present..."
+          ls
+          echo "making it executable..."
+          chmod +x helloWorld.exe
           ./helloWorld.exe
           ls
