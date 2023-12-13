@@ -39,10 +39,10 @@ jobs:
 
       - name: Uploading the executable for later...
         uses: actions/upload-artifact@v3
-        # with:
+        with:
         #   name: mainExecutable
-        #   path: src/helloWorld.exe
-        #   retention-days: 1
+          path: *
+          retention-days: 1
 
   test_job:
     # runs-on: self-hosted
