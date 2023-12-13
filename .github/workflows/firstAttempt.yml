@@ -38,11 +38,9 @@ jobs:
           ./helloWorld.exe
 
       - name: Uploading the executable for later...
-        uses: actions/upload-artifact@v3
+        uses: actions/cache@v3
         with:
-        #   name: mainExecutable
           path: ./*
-          retention-days: 1
 
   test_job:
     # runs-on: self-hosted
@@ -53,11 +51,11 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: Download artifacts from build stage...
+      # - name: Download artifacts from build stage...
 
-        # putting "uses" clause in a step means we cannot have our
-        # own bash script here!
-        uses: actions/download-artifact@v3
+      #   # putting "uses" clause in a step means we cannot have our
+      #   # own bash script here!
+      #   uses: actions/download-artifact@v3
 
         # comment out the next two lines to just download
         # all artifacts
@@ -70,10 +68,9 @@ jobs:
         run: |
           whoami
           pwd
+          cd src
           echo "helloWorld.exe should already be present..."
           ls
-          echo "move the executable from top-level down to src"
-          cd src
           echo "making it executable..."
           chmod +x helloWorld.exe
           ls
