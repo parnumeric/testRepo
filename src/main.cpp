@@ -3,7 +3,7 @@
 
 int main()
 {
-  std::cout << "hello world!\n";
+  std::cout << "hello Dmitry!\n";
 
   // next, write our output file
   std::ofstream outputFile;
